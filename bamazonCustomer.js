@@ -66,6 +66,7 @@ function orderProduct() {
 
             if(selectedItem.stock_quantity < parseInt(answer.selectQty)) {
                 console.log("Sorry, we do not have that many - please reenter your order.")
+                orderProduct();
             } else {
                 connection.query(
                     "UPDATE products SET ? WHERE ?",
